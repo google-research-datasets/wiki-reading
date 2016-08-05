@@ -1,1 +1,1 @@
-The WikiReading dataset is made available under the [Creative Commons Attribution-ShareAlike 3.0 Unported License](https://creativecommons.org/licenses/by-sa/3.0/).
+The WikiReading dataset is made available under the terms of the [Creative Commons Attribution-ShareAlike 3.0 Unported License](https://creativecommons.org/licenses/by-sa/3.0/). The data is obtained from two sources, [Wikipedia](https://en.wikipedia.org) and [Wikidata](https://www.wikidata.org).
