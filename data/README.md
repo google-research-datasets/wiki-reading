@@ -2,7 +2,7 @@
 
 | file             | description                                                          |
 |------------------|----------------------------------------------------------------------|
-| train/           | lots of TFRecords containing all the features you'd want             |
+| train/           | 16,039,400 TFRecords containing all the features you'd want          |
 | validation/      | 1,886,798 TFRecords                                                  |
 | test/            | 941,280 TFRecords                                                    |
 | document.vocab   | vocabulary for tokens from Wikipedia documents ordered by frequency  |
