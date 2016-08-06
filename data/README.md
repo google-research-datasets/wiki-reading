@@ -3,7 +3,7 @@
 Train, validation, and test datasets are in [TFRecord](https://www.tensorflow.org/versions/r0.10/how_tos/reading_data/index.html#file-formats) form.
 
 | file             | size            | description                                                  |
-|------------------|--------------------------------------------------------------------------------|
+|------------------|-----------------|--------------------------------------------------------------|
 | train            | 16,039,400      | https://storage.googleapis.com/wikireading/train.tar.gz      |
 | validation       | 1,886,798       | https://storage.googleapis.com/wikireading/validation.tar.gz |
 | test             | 941,280         | https://storage.googleapis.com/wikireading/test.tar.gz       |
