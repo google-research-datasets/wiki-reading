@@ -2,6 +2,7 @@
 
 echo "Downloading WikiReading..."
 
+wget https://github.com/dmorr-google/wiki-reading/blob/master/README.md
 wget https://github.com/dmorr-google/wiki-reading/blob/master/data/answer.vocab
 wget https://github.com/dmorr-google/wiki-reading/blob/master/data/document.vocab
 wget https://github.com/dmorr-google/wiki-reading/blob/master/data/raw_answer.vocab
