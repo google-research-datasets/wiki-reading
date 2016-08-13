@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Downloading WikiReading..."
+echo "Downloading WikiReading TensorFlow Records..."
 
 wget https://github.com/dmorr-google/wiki-reading/blob/master/README.md
 wget https://github.com/dmorr-google/wiki-reading/blob/master/data/answer.vocab

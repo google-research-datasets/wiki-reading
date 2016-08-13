@@ -6,24 +6,31 @@ Run get_data.sh to download data used in this paper.
 
 ## WikiReading Data
 
-Train, validation, and test datasets are in [TFRecord](https://www.tensorflow.org/versions/r0.10/how_tos/reading_data/index.html#file-formats) format. 
+Train, validation, and test datasets are in [TFRecord](https://www.tensorflow.org/versions/r0.10/how_tos/reading_data/index.html#file-formats)
+or streamed JSON (one JSON object per line). 
 For example test.tar.gz contains 15 files whose union is the whole test set.
 We split them to help speed up training/testing by parallelizing reads.
-Any one of the shards can be opened with a [TFRecordReader](https://www.tensorflow.org/versions/r0.10/api_docs/python/io_ops.html#TFRecordReader).
+Any one of the shards can be opened with a [TFRecordReader](https://www.tensorflow.org/versions/r0.10/api_docs/python/io_ops.html#TFRecordReader)
+or with your favorite JSON reader for every line.
 
-| file             | size               | description                                                  |
-|------------------|--------------------|--------------------------------------------------------------|
-| train            | 16,039,400 examples| https://storage.googleapis.com/wikireading/train.tar.gz      |
-| validation       | 1,886,798 examples | https://storage.googleapis.com/wikireading/validation.tar.gz |
-| test             | 941,280 examples   | https://storage.googleapis.com/wikireading/test.tar.gz       |
-| document.vocab   | 176,978 tokens     | vocabulary for tokens from Wikipedia documents               |
-| answer.vocab     | 10,876 tokens      | vocabulary for tokens from answers                           |
-| raw_answer.vocab | 1,359,244 tokens   | vocabulary for whole answers as they appear in WikiData      |
-| type.vocab       | 80 tokens          | vocabulary for Part of Speech tags                           |
+| file             | size               | description                                                            |
+|------------------|--------------------|------------------------------------------------------------------------|
+| train            | 16,039,400 examples| TFRecord https://storage.googleapis.com/wikireading/train.tar.gz       |
+|                  |                    | JSON https://storage.googleapis.com/wikireading/train.json.tar.gz      |
+| validation       | 1,886,798 examples | TFRecord https://storage.googleapis.com/wikireading/validation.tar.gz  |
+|                  |                    | JSON https://storage.googleapis.com/wikireading/validation.json.tar.gz |
+| test             | 941,280 examples   | TFRecord https://storage.googleapis.com/wikireading/test.tar.gz        |
+|                  |                    | JSON https://storage.googleapis.com/wikireading/test.json.tar.gz       |
+| document.vocab   | 176,978 tokens     | vocabulary for tokens from Wikipedia documents                         |
+| answer.vocab     | 10,876 tokens      | vocabulary for tokens from answers                                     |
+| raw_answer.vocab | 1,359,244 tokens   | vocabulary for whole answers as they appear in WikiData                |
+| type.vocab       | 80 tokens          | vocabulary for Part of Speech tags                                     |
 
 ### Features
 
-| TFRecord feature name        | description                                                                      |
+Each instance contains these features (some features may be empty).
+
+| feature name                 | description                                                                      |
 |------------------------------|----------------------------------------------------------------------------------|
 | `answer_breaks`              |  Indices into `answer_ids` and `answer_string_sequence`.                         |
 |                              |  Used to delimit multiple answers to a question, e.g. a list answer.             |
