@@ -16,7 +16,7 @@ or with your favorite JSON reader for every line.
 | file             | size               | description                                                            |
 |------------------|--------------------|------------------------------------------------------------------------|
 | train            | 16,039,400 examples| TFRecord https://storage.googleapis.com/wikireading/train.tar.gz       |
-|                  |                    | JSON https://storage.googleapis.com/wikireading/train.json.tar.gz      |
+|                  |                    | JSON coming soon                                                       |
 | validation       | 1,886,798 examples | TFRecord https://storage.googleapis.com/wikireading/validation.tar.gz  |
 |                  |                    | JSON https://storage.googleapis.com/wikireading/validation.json.tar.gz |
 | test             | 941,280 examples   | TFRecord https://storage.googleapis.com/wikireading/test.tar.gz        |
