@@ -27,7 +27,7 @@ import utils
 
 VOCAB_SIZE = 10000
 EMBED_DIM = 20
-ANSWER_DIM = 20
+ANSWER_DIM = 2 * EMBED_DIM
 ANSWER_NUM = 5000
 BATCH_SIZE = 128
 LEARNING_RATE = 0.01
@@ -36,7 +36,7 @@ SPARSE_FEATURES = ['document_sequence', 'question_sequence']
 
 
 def get_wikireading_input():
-  filename = "../train-00009-of-00150"
+  filename = "../train-*"
   feature_info = {k: tf.VarLenFeature(dtype=tf.int64) for k in SPARSE_FEATURES}
   feature_info['answer_ids'] = tf.VarLenFeature(dtype=tf.int64)
   def input_fn():
@@ -60,7 +60,6 @@ def bow_model(features, target):
   question_enc = layers.safe_embedding_lookup_sparse(
       [embeddings], question, None, combiner='sum')
   joint_enc = tf.concat(1, [doc_enc, question_enc])
-  joint_enc = layers.fully_connected(joint_enc, ANSWER_DIM)
   answer_embeddings = tf.get_variable(
       'answer_embeddings', [ANSWER_DIM, ANSWER_NUM])
   answer_biases = tf.get_variable('answer_biases', [ANSWER_NUM])
