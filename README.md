@@ -12,6 +12,8 @@ For example test.tar.gz contains 15 files whose union is the whole test set.
 We split them to help speed up training/testing by parallelizing reads.
 Any one of the shards can be opened with a [TFRecordReader](https://www.tensorflow.org/versions/r0.10/api_docs/python/io_ops.html#TFRecordReader)
 or with your favorite JSON reader for every line.
+[Download a sample TFRecord shard](https://storage.googleapis.com/wikireading/train-00000-of-00150) (1/150th) 
+of the training set to play around with if disk space is limited.
 
 | file             | size               | description                                                            |
 |------------------|--------------------|------------------------------------------------------------------------|
@@ -25,6 +27,8 @@ or with your favorite JSON reader for every line.
 | answer.vocab     | 10,876 tokens      | vocabulary for tokens from answers                                     |
 | raw_answer.vocab | 1,359,244 tokens   | vocabulary for whole answers as they appear in WikiData                |
 | type.vocab       | 80 tokens          | vocabulary for Part of Speech tags                                     |
+
+
 
 ### Features
 
