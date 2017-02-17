@@ -7,7 +7,7 @@ Run get_data.sh to download data used in this paper.
 ## WikiReading Data
 
 Train, validation, and test datasets are in [TFRecord](https://www.tensorflow.org/versions/r0.10/how_tos/reading_data/index.html#file-formats)
-or streamed JSON (one JSON object per line). 
+or streamed JSON (one JSON object per line). They are 45GB, 5GB, and 3GB respectively.
 For example test.tar.gz contains 15 files whose union is the whole test set.
 We split them to help speed up training/testing by parallelizing reads.
 Any one of the shards can be opened with a [TFRecordReader](https://www.tensorflow.org/versions/r0.10/api_docs/python/io_ops.html#TFRecordReader)
