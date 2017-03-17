@@ -1,6 +1,6 @@
 # WikiReading
 
-http://www.aclweb.org/anthology/P/P16/P16-1145.pdf
+https://arxiv.org/abs/1608.03542
 
 Run get_data.sh to download data used in this paper.
 
