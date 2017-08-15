@@ -2,16 +2,18 @@
 
 echo "Downloading WikiReading TensorFlow Records..."
 
-wget https://github.com/dmorr-google/wiki-reading/blob/master/README.md
-wget https://github.com/dmorr-google/wiki-reading/blob/master/data/answer.vocab
-wget https://github.com/dmorr-google/wiki-reading/blob/master/data/document.vocab
-wget https://github.com/dmorr-google/wiki-reading/blob/master/data/raw_answer.vocab
-wget https://github.com/dmorr-google/wiki-reading/blob/master/data/type.vocab
-wget -c https://storage.googleapis.com/wikireading/validation.tar.gz
+CLOUD_STORAGE=https://storage.googleapis.com/wikireading
+
+wget https://github.com/google-research-datasets/wiki-reading/blob/master/README.md
+wget ${CLOUD_STORAGE}/answer.vocab
+wget ${CLOUD_STORAGE}/document.vocab
+wget ${CLOUD_STORAGE}/raw_answer.vocab
+wget ${CLOUD_STORAGE}/type.vocab
+wget -c ${CLOUD_STORAGE}/validation.tar.gz
 tar xvzf validation.tar.gz &
-wget -c https://storage.googleapis.com/wikireading/test.tar.gz
+wget -c ${CLOUD_STORAGE}/test.tar.gz
 tar xvzf test.tar.gz &
-wget -c https://storage.googleapis.com/wikireading/train.tar.gz
+wget -c ${CLOUD_STORAGE}/train.tar.gz
 tar xvzf train.tar.gz
 
 echo "Done."
