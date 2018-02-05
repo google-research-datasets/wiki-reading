@@ -2,7 +2,10 @@
 
 https://arxiv.org/abs/1608.03542
 
-Run get_data.sh to download data used in this paper.
+Run get_data.sh to download data the original English data used in this paper.
+
+Run get_ru_data.sh or get_tr_data.sh to get the Russian or Turkish version of the WikiReading Data used in
+[Byte-level Machine Reading across Morphologically Varied Languages](http://www.tomkenter.nl/pdf/kenter_byte-level_2018.pdf)
 
 ## WikiReading Data
 
@@ -15,6 +18,7 @@ or with your favorite JSON reader for every line.
 [Download a sample TFRecord shard](https://storage.googleapis.com/wikireading/train-00000-of-00150) (1/150th) 
 of the training set to play around with if disk space is limited.
 
+## English
 | file             | size               | description                                                            |
 |------------------|--------------------|------------------------------------------------------------------------|
 | train            | 16,039,400 examples| TFRecord https://storage.googleapis.com/wikireading/train.tar.gz       |
@@ -27,10 +31,37 @@ of the training set to play around with if disk space is limited.
 | answer.vocab     | 10,876 tokens      | vocabulary for tokens from answers                                     |
 | raw_answer.vocab | 1,359,244 tokens   | vocabulary for whole answers as they appear in WikiData                |
 | type.vocab       | 80 tokens          | vocabulary for Part of Speech tags                                     |
+| character.vocab  | 12486 tokens       | vocabulary for all characters that appear in the string sequences      |
 
+## Russian
+| file             | size               | description                                                            |
+|------------------|--------------------|------------------------------------------------------------------------|
+| train            | 4,259,667 examples | TFRecord https://storage.googleapis.com/wikireading/ru/train.tar.gz    |
+|                  |                    | JSON https://storage.googleapis.com/wikireading/ru/train.json.tar.gz   |
+| validation       | 531,412 examples   | TFRecord https://storage.googleapis.com/wikireading/ru/valid.tar.gz    |
+|                  |                    | JSON https://storage.googleapis.com/wikireading/ru/valid.json.tar.gz   |
+| test             | 533,026 examples   | TFRecord https://storage.googleapis.com/wikireading/ru/test.tar.gz     |
+|                  |                    | JSON https://storage.googleapis.com/wikireading/ru/test.json.tar.gz    |
+| document.vocab   | 965,157 tokens     | vocabulary for tokens from Wikipedia documents                         |
+| answer.vocab     | 57,952 tokens      | vocabulary for tokens from answers                                     |
+| type.vocab       | 56 tokens          | vocabulary for Part of Speech tags                                     |
+| character.vocab  | 12,205 tokens      | vocabulary for all characters that appear in the string sequences      |
 
+## Turkish
+| file             | size               | description                                                            |
+|------------------|--------------------|------------------------------------------------------------------------|
+| train            | 654,705 examples   | TFRecord https://storage.googleapis.com/wikireading/tr/train.tar.gz    |
+|                  |                    | JSON https://storage.googleapis.com/wikireading/tr/train.json.tar.gz   |
+| validation       | 81,622 examples    | TFRecord https://storage.googleapis.com/wikireading/tr/valid.tar.gz    |
+|                  |                    | JSON https://storage.googleapis.com/wikireading/tr/valid.json.tar.gz   |
+| test             | 82,643 examples    | TFRecord https://storage.googleapis.com/wikireading/tr/test.tar.gz     |
+|                  |                    | JSON https://storage.googleapis.com/wikireading/tr/test.json.tar.gz    |
+| document.vocab   | 215,294 tokens     | vocabulary for tokens from Wikipedia documents                         |
+| answer.vocab     | 11,123 tokens      | vocabulary for tokens from answers                                     |
+| type.vocab       | 10 tokens          | vocabulary for Part of Speech tags                                     |
+| character.vocab  | 6638 tokens        | vocabulary for all characters that appear in the string sequences      |
 
-### Features
+## Features
 
 Each instance contains these features (some features may be empty).
 
@@ -56,5 +87,5 @@ Each instance contains these features (some features may be empty).
 | `raw_answer_ids`             | `raw_answer.vocab` ID for the answer.                                            |
 | `raw_answers`                | A string containing the raw answer.                                              |
 | `sentence_breaks`            | Word indices into the document indicating a sentence boundary.                   |
-| `string_sequence`            | String sequence for the words in the document.                                   |
+| `string_sequence`            | String sequence for the words in the document. `character.vocab` for char IDs.   |
 | `type_sequence`              | `type.vocab` ID sequence for tags (POS, type, etc.) in the document.             |
