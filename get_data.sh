@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Downloading WikiReading TensorFlow Records..."
+echo "Downloading English WikiReading TensorFlow Records..."
 
 CLOUD_STORAGE=https://storage.googleapis.com/wikireading
 
@@ -9,6 +9,7 @@ wget ${CLOUD_STORAGE}/answer.vocab
 wget ${CLOUD_STORAGE}/document.vocab
 wget ${CLOUD_STORAGE}/raw_answer.vocab
 wget ${CLOUD_STORAGE}/type.vocab
+wget ${CLOUD_STORAGE}/character.vocab
 wget -c ${CLOUD_STORAGE}/validation.tar.gz
 tar xvzf validation.tar.gz &
 wget -c ${CLOUD_STORAGE}/test.tar.gz
