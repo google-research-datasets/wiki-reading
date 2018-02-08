@@ -1,11 +1,28 @@
 # WikiReading
 
-https://arxiv.org/abs/1608.03542
+This repository contains the three WikiReading datasets as used and described in [WikiReading: A Novel Large-scale Language Understanding Task over Wikipedia, Hewlett, et al, ACL 2016](https://arxiv.org/abs/1608.03542) (the English WikiReading dataset) and [Byte-level Machine Reading across Morphologically Varied Languages, Kenter et al, AAAI-18](http://tomkenter.nl/pdf/kenter_byte-level_2018.pdf) (the Turkish and Russian datasets).
 
-Run get_data.sh to download data the original English data used in this paper.
+Run `get_data.sh` to download data the English WikiReading dataset.
 
-Run get_ru_data.sh or get_tr_data.sh to get the Russian or Turkish version of the WikiReading Data used in
-[Byte-level Machine Reading across Morphologically Varied Languages](http://www.tomkenter.nl/pdf/kenter_byte-level_2018.pdf)
+Run `get_ru_data.sh` and `get_tr_data.sh` to get the Russian and Turkish version of the WikiReading data, respectively.
+
+If you use the data or the results reported in the papers, please feel free to cite them.
+
+    @inproceedings {hewlett2016wikireading,
+     title = {{WIKIREADING}: A Novel Large-scale Language Understanding Task over {Wikipedia}},
+     booktitle = {Proceedings of the The 54th Annual Meeting of the Association for Computational Linguistics (ACL 2016)},
+     author = {Daniel Hewlett and Alexandre Lacoste and Llion Jones and Illia Polosukhin and Andrew Fandrianto and Jay Han and Matthew Kelcey and David Berthelot},
+     year = {2016}
+    }
+
+and
+
+    @inproceedings{byte-level2018kenter,
+      title={Byte-level Machine Reading across Morphologically Varied Languages},
+      author={Tom Kenter and Llion Jones and Daniel Hewlett},
+      booktitle={Proceedings of the The Thirty-Second AAAI Conference on Artificial Intelligence (AAAI-18)},
+      year={2018}
+    }
 
 ## WikiReading Data
 
@@ -18,7 +35,7 @@ or with your favorite JSON reader for every line.
 [Download a sample TFRecord shard](https://storage.googleapis.com/wikireading/train-00000-of-00150) (1/150th) 
 of the training set to play around with if disk space is limited.
 
-## English
+### English
 | file             | size               | description                                                            |
 |------------------|--------------------|------------------------------------------------------------------------|
 | train            | 16,039,400 examples| TFRecord https://storage.googleapis.com/wikireading/train.tar.gz       |
@@ -33,7 +50,7 @@ of the training set to play around with if disk space is limited.
 | type.vocab       | 80 tokens          | vocabulary for Part of Speech tags                                     |
 | character.vocab  | 12486 tokens       | vocabulary for all characters that appear in the string sequences      |
 
-## Russian
+### Russian
 | file             | size               | description                                                            |
 |------------------|--------------------|------------------------------------------------------------------------|
 | train            | 4,259,667 examples | TFRecord https://storage.googleapis.com/wikireading/ru/train.tar.gz    |
@@ -47,7 +64,7 @@ of the training set to play around with if disk space is limited.
 | type.vocab       | 56 tokens          | vocabulary for Part of Speech tags                                     |
 | character.vocab  | 12,205 tokens      | vocabulary for all characters that appear in the string sequences      |
 
-## Turkish
+### Turkish
 | file             | size               | description                                                            |
 |------------------|--------------------|------------------------------------------------------------------------|
 | train            | 654,705 examples   | TFRecord https://storage.googleapis.com/wikireading/tr/train.tar.gz    |
