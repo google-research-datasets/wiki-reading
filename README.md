@@ -32,8 +32,9 @@ For example test.tar.gz contains 15 files whose union is the whole test set.
 We split them to help speed up training/testing by parallelizing reads.
 Any one of the shards can be opened with a [TFRecordReader](https://www.tensorflow.org/versions/r0.10/api_docs/python/io_ops.html#TFRecordReader)
 or with your favorite JSON reader for every line.
-[Download a sample TFRecord shard](https://storage.googleapis.com/wikireading/train-00000-of-00150) (1/150th) 
-of the training set to play around with if disk space is limited.
+[Download a sample TFRecord shard](https://storage.googleapis.com/wikireading/validation-00000-of-00015) 
+or [a sample JSON shard](https://storage.googleapis.com/wikireading/validation-00000-of-00015.json)
+of the validation set (1/15th) to play around with if disk space is limited.
 
 ### English
 | file             | size               | description                                                            |
